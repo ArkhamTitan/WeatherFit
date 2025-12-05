@@ -108,7 +108,7 @@ main {
 }
 
 #weatherIcon {
-    font-size: 3rem;
+    font-size: 5rem;
     display: inline-block;
     width: auto;
     height: auto;
@@ -117,6 +117,12 @@ main {
 #tempBlock {
     font-size: 2.5rem;
     margin-top: 1rem;
+}
+
+.tempRange {
+    font-size: 1rem;
+    margin-top: 0.3rem;
+    opacity: 0.85;
 }
 
 /*Outfit Grid*/
@@ -185,4 +191,7 @@ footer {
     opacity: 0.8;
 
 }
+
+
+
 
