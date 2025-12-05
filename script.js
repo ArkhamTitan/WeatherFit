@@ -46,6 +46,10 @@ function updateWeatherUI(data) {
     weatherDesc.textContent = data.condition;
     temperature.textContent = `${Math.round(data.temp)}°F`;
 
+    // Display high/low temps
+    const tempRange = document.getElementById("tempRange");
+    tempRange.textContent = `H: ${Math.round(data.temp_max)}°F  L: ${Math.round(data.temp_min)}°F`;
+
     // Emoji icon mapping
     const iconMap = {
         clear: "☀️",
@@ -57,7 +61,6 @@ function updateWeatherUI(data) {
     };
 
     const conditionKey = data.condition.toLowerCase();
-
     weatherIcon.textContent = iconMap[conditionKey] || "🌡️";
 }
 
