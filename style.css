@@ -108,8 +108,10 @@ main {
 }
 
 #weatherIcon {
-    width: 64px;
-    height: 64px;
+    font-size: 3rem;
+    display: inline-block;
+    width: auto;
+    height: auto;
 }
 
 #tempBlock {
@@ -183,3 +185,4 @@ footer {
     opacity: 0.8;
 
 }
+
