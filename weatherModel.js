@@ -21,6 +21,23 @@ async function getWeather(city, apiKey) {
     let temp_max = data.main.temp;
     let temp_min = data.main.temp;
 
+    try {
+        const forecastResponse = await fetch(forecastUrl);
+        if (forecastResponse.ok) {
+            const forecastData = await forecastResponse.json();
+            
+            // Get temperatures from next 8 forecast entries (next 24 hours)
+            const next24Hours = forecastData.list.slice(0, 8);
+            const temps = next24Hours.map(entry => entry.main.temp);
+            
+            temp_max = Math.max(...temps, data.main.temp);
+            temp_min = Math.min(...temps, data.main.temp);
+        }
+    } catch (err) {
+        // If forecast fails, just use current temp for both
+        console.log("Forecast fetch failed, using current temp");
+    }
+
     // returns the temp in F, and the weather in lowercase
     return {
         temp: data.main.temp,
