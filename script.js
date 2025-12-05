@@ -1,8 +1,3 @@
-
-Luka Derry <twiliprincessmt@gmail.com>
-5:38 PM (0 minutes ago)
-to me
-
 const input = document.getElementById("locationInput");
 const btn = document.getElementById("searchBtn");
 const errorMsg = document.getElementById("errorMsg");
@@ -25,7 +20,7 @@ async function fetchOutfit() {
     hideError();
 
     try {
-        const res = await fetch(`/api/outfit?city=${city}`);
+        const res = await fetch(`/api/outfit?city=${encodeURIComponent(city)}`);
         const data = await res.json();
 
         if (data.error) throw new Error(data.error);
