@@ -20,6 +20,8 @@ app.get("/api/outfit", async (req, res) => {
         res.json({
             city,
             temp: weather.temp,
+            temp_min: weather.temp_min,
+            temp_max: weather.temp_max,
             condition: weather.condition,
             outfit
         });
