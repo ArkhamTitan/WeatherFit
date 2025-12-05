@@ -41,7 +41,7 @@ function updateWeatherUI(data) {
     weatherDesc.textContent = data.condition;
     temperature.textContent = `${Math.round(data.temp)}°F`;
 
-    // Basic icon mapping
+    // Emoji icon mapping
     const iconMap = {
         clear: "☀️",
         clouds: "☁️",
@@ -51,7 +51,9 @@ function updateWeatherUI(data) {
         drizzle: "🌦️"
     };
 
-    weatherIcon.textContent = iconMap[data.condition] || "🌡️";
+    const conditionKey = data.condition.toLowerCase();
+
+    weatherIcon.textContent = iconMap[conditionKey] || "🌡️";
 }
 
 function updateOutfitUI(outfit) {
