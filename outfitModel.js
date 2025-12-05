@@ -23,9 +23,9 @@ function getOutfit(temp, condition) {
 
   let category;
 
-    if (temp < 50) category = cold;
-    else if (temp < 75) category = medium;
-    else category = hot;
+  if (temp < 50) category = cold;
+  else if (temp < 75) category = medium;
+  else category = hot;
 
   let shoes = getRandomItem(category.shoes);
 
@@ -34,11 +34,10 @@ function getOutfit(temp, condition) {
     shoes = "Waterproof Boots";
   }
 
-  // Return random articles of clothing in category
   return {
     top: getRandomItem(category.tops),
     bottom: getRandomItem(category.bottoms),
-    shoes: getRandomItem(category.shoes)
+    shoes: shoes   // <-- FIXED
   };
 }
 
